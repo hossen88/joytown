@@ -1,0 +1,1459 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111110">
+<meta name="description" content="JOY TOWN — سيرفر رول بلاي في FiveM. مدينة لا تنام، لكل شخصية حكاية.">
+<title>JOY TOWN — FiveM Roleplay</title>
+<link rel="icon" type="image/png" href="LOGO.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,600;1,700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="intro-active">
+
+<!-- ============ INTRO / LOADING ============ -->
+<section class="intro" id="intro" dir="ltr" role="dialog" aria-modal="true" aria-label="Welcome to Joy Town">
+  <div class="intro-glow" aria-hidden="true"></div>
+  <div class="intro-dust" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+  <div class="intro-logo-wrap" aria-hidden="true">
+    <svg class="intro-ring" viewBox="0 0 240 240">
+      <circle cx="120" cy="120" r="112" pathLength="1"></circle>
+      <circle cx="120" cy="120" r="96" pathLength="1" class="ring-b"></circle>
+    </svg>
+    <img class="intro-logo-img" src="LOGO.png" alt="JOY TOWN" width="140" height="140">
+    <span class="intro-mark-glow"></span>
+  </div>
+
+  <div class="intro-progress-layout">
+    <div class="intro-loading-ui">
+      <div class="intro-loading-caption">
+        <span>PREPARING YOUR ARRIVAL</span>
+        <span class="intro-load-status">PAVING THE STREETS</span>
+      </div>
+      <div class="intro-loading-line" role="progressbar" aria-label="Loading Joy Town" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span></span><i aria-hidden="true"></i>
+      </div>
+      <span class="intro-track-label">YOUR NEXT CHAPTER IS LOADING.</span>
+    </div>
+    <div class="intro-counter" aria-hidden="true"><span class="intro-percent">000</span><small>%</small></div>
+  </div>
+
+  <div class="intro-titles" aria-live="off">
+    <p class="intro-title" data-cue="0"><span>Welcome</span></p>
+    <p class="intro-title" data-cue="1"><span>To</span> <b>The</b></p>
+    <p class="intro-title" data-cue="2"><span>Joy</span> <b>Town</b></p>
+    <p class="intro-title" data-cue="3"><span>Where</span> <b>You</b></p>
+    <p class="intro-title" data-cue="4"><span>Belong.</span></p>
+  </div>
+
+  <button class="intro-skip" type="button">تخطّي <b aria-hidden="true">↗</b></button>
+</section>
+<noscript><style>.intro{display:none!important}body.intro-active{overflow:auto!important}</style></noscript>
+
+<a class="skip-link" href="#main">تجاوز إلى المحتوى</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" dir="ltr">
+  <a class="brand" href="#home" aria-label="JOY TOWN — البداية">
+    <span class="brand-mark" aria-hidden="true">
+      <img src="LOGO.png" alt="JOY TOWN" width="44" height="44">
+    </span>
+    <span class="brand-type">
+      <span class="brand-name" data-text="JOY TOWN">JOY TOWN</span>
+      <small>ROLEPLAY STUDIO</small>
+    </span>
+  </a>
+
+  <!-- Header Live Status Chip -->
+  <a class="header-status-badge" href="#connect" aria-label="حالة السيرفر" data-header-status-badge>
+    <span class="status-pulse status-offline" data-header-status-pulse>
+      <span class="pulse-ring"></span>
+      <span class="pulse-core"></span>
+    </span>
+    <span class="header-status-text" data-header-status-text>OFFLINE</span>
+    <span class="header-status-divider" aria-hidden="true">|</span>
+    <span class="header-status-count"><b data-players-count>0</b> <small>PLAYERS</small></span>
+  </a>
+
+  <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="site-nav"><i aria-hidden="true"></i></button>
+
+  <nav class="site-nav" id="site-nav" aria-label="التنقل الرئيسي" dir="rtl">
+    <span class="menu-eyebrow" dir="ltr">EXPLORE JOY TOWN</span>
+    <a class="nav-home" href="#home"><span>البداية</span><small>01</small></a>
+    <a href="#stories"><span>اختر قصتك</span><small>02</small></a>
+    <a href="#rules"><span>قوانين المدينة</span><small>03</small></a>
+    <a href="#apply"><span>الاختبار الالكتروني</span><small>04</small></a>
+    <a href="#connect"><span>دخول المدينة</span><small>05</small></a>
+    <a href="#streamers"><span>صناع المحتوى</span><small>06</small></a>
+    <a href="#city-map"><span>استكشف الخريطة</span><small>07</small></a>
+  </nav>
+</header>
+<div class="menu-backdrop" aria-hidden="true"></div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home" aria-roledescription="عرض شخصيات" aria-label="شخصيات JOY TOWN" dir="ltr" tabindex="-1">
+    <div class="ambient" aria-hidden="true"></div>
+    <div class="light-plane" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="ghost-word" aria-hidden="true">JOY</div>
+    <div class="ambient-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+    <div class="scene-content">
+      <p class="scene-kicker"><span class="tiny-cross" aria-hidden="true">+</span> JOY TOWN / FIVEM ROLEPLAY <i class="kicker-rule" aria-hidden="true"></i></p>
+      <div class="headline-window">
+        <h1 id="hero-title">
+          <span class="headline-line" style="--i:0">OWN THE STREETS.</span>
+          <span class="headline-line accent" style="--i:1">WRITE THE STORY.</span>
+        </h1>
+      </div>
+
+      <p class="hero-about" dir="rtl">
+        <b><bdi>JOY TOWN</bdi></b> سيرفر رول بلاي بنظام <b><bdi>CFW</bdi></b>، بمستوى عالٍ جداً وأسلوب
+        <b>هارد كور</b> حقيقي، و<b>سيناريوهات قوية</b> تصنع الفرق في كل قرار تتخذه داخل المدينة.
+      </p>
+
+      <div class="hero-story" dir="rtl">
+        <p class="scene-arabic" data-scene-arabic>القانون هنا ليس اقتراحاً.</p>
+        <p class="scene-description" data-scene-description>ارتدِ الزي، احمِ الشوارع، وكن الخط الأخير بين المدينة والفوضى.</p>
+      </div>
+      <a class="primary-button" href="#connect"><span>ادخل المدينة</span><span class="button-mark" aria-hidden="true">+</span></a>
+    </div>
+
+    <div class="character-stage" aria-hidden="true">
+
+      <div class="character-layer is-active" data-layer="0">
+        <img class="figure" src="11.png" alt="" width="1232" height="1277" decoding="async" fetchpriority="high">
+      </div>
+
+      <div class="character-layer" data-layer="1">
+        <img class="figure" src="22.png" alt="" width="1232" height="1277" decoding="async" loading="lazy">
+      </div>
+
+      <div class="character-layer" data-layer="2">
+        <img class="figure" src="44.png" alt="" width="1008" height="1045" decoding="async" loading="lazy">
+      </div>
+
+      <div class="character-layer" data-layer="3">
+        <img class="figure" src="33.png" alt="" width="1232" height="1277" decoding="async" loading="lazy">
+      </div>
+
+      <div class="character-vignette"></div>
+    </div>
+
+    <div class="identity" aria-hidden="true">
+      <span class="identity-overline" data-identity-tag>THE LAW</span>
+      <span class="identity-name" data-identity-name>POLICE</span>
+      <span class="identity-line"></span>
+    </div>
+    <div class="scene-number" aria-hidden="true" data-scene-number>01</div>
+
+    <div class="hero-bottom">
+      <div class="chapter-control">
+        <div class="chapter-top">
+          <span class="chapter-current">01</span>
+          <span class="chapter-divider">/</span>
+          <span class="chapter-total">04</span>
+        </div>
+        <div class="chapter-progress" aria-hidden="true"><span></span></div>
+        <span class="chapter-caption">SELECT YOUR STORY</span>
+      </div>
+
+      <div class="character-selectors" role="group" aria-label="اختر شخصية">
+        <button class="character-choice active" data-scene="0" aria-pressed="true" aria-label="اختيار الشرطة">
+          <span class="choice-number">01</span>
+          <span class="choice-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg></span>
+          <span class="choice-name">POLICE<small>THE LAW</small></span>
+          <span class="choice-indicator" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span>
+        </button>
+        <button class="character-choice" data-scene="1" aria-pressed="false" aria-label="اختيار الإسعاف">
+          <span class="choice-number">02</span>
+          <span class="choice-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg></span>
+          <span class="choice-name">MEDIC<small>THE HOPE</small></span>
+          <span class="choice-indicator" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span>
+        </button>
+        <button class="character-choice" data-scene="2" aria-pressed="false" aria-label="اختيار المجرم">
+          <span class="choice-number">03</span>
+          <span class="choice-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18v5c0 4-3.1 7-7 7l-2-3-2 3c-3.9 0-7-3-7-7z"/><circle cx="8.4" cy="11.6" r="1.5"/><circle cx="15.6" cy="11.6" r="1.5"/></svg></span>
+          <span class="choice-name">CRIMINAL<small>THE RISK</small></span>
+          <span class="choice-indicator" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span>
+        </button>
+        <button class="character-choice" data-scene="3" aria-pressed="false" aria-label="اختيار المواطن">
+          <span class="choice-number">04</span>
+          <span class="choice-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V7l8-4 8 4v14"/><path d="M9.5 21v-6h5v6"/><path d="M8 11h2M14 11h2"/></svg></span>
+          <span class="choice-name">CITIZEN<small>THE DREAM</small></span>
+          <span class="choice-indicator" aria-hidden="true"><svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span>
+        </button>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">SCROLL<i class="scroll-line"></i></div>
+    </div>
+
+    <p class="sr-only scene-status" aria-live="polite" aria-atomic="true"></p>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="manifesto-strip" aria-hidden="true">
+    <div class="strip-track">
+      <span>JOY TOWN</span><b>✦</b><span class="strip-outline">ROLEPLAY</span><b>✦</b><span>LIVE THE STORY</span><b>✦</b><span class="strip-outline">FIVEM</span><b>✦</b>
+      <span>JOY TOWN</span><b>✦</b><span class="strip-outline">ROLEPLAY</span><b>✦</b><span>LIVE THE STORY</span><b>✦</b><span class="strip-outline">FIVEM</span><b>✦</b>
+    </div>
+  </div>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats-band" dir="ltr" aria-label="أرقام المدينة">
+    <div class="stat" data-reveal><strong data-stat-players data-count="0">0</strong><span>PLAYERS ONLINE</span></div>
+    <div class="stat" data-reveal style="--d:.08s"><strong class="static">4</strong><span>CAREER PATHS</span></div>
+    <div class="stat" data-reveal style="--d:.16s"><strong data-stat-discord data-count="0">0</strong><span>DISCORD ONLINE</span></div>
+    <div class="stat" data-reveal style="--d:.24s"><strong data-stat-streams data-count="0">0</strong><span>ACTIVE STREAMS</span></div>
+  </section>
+
+  <!-- ============ STORIES ============ -->
+  <section class="story-section" id="stories" aria-labelledby="stories-title">
+    <div class="story-heading" data-reveal>
+      <span class="story-eyebrow" dir="ltr">THE CITY IS YOURS TO WRITE</span>
+      <h2 id="stories-title" dir="ltr">CHOOSE YOUR <em>STORY.</em></h2>
+      <p>احمِ، أنقذ، جازف، أو اصنع حياة بطريقتك.<br>اختر بطاقتك واكتشف أين تبدأ حكايتك في JOY TOWN.</p>
+    </div>
+
+    <div class="story-hand" dir="ltr" aria-label="اختر مسار شخصيتك">
+      <button class="story-card card-law" data-story="police" data-reveal style="--d:0s" aria-haspopup="dialog" aria-label="اكتشف قصة الشرطة">
+        <span class="story-corner">01<span>♠</span></span>
+        <span class="story-card-kicker">KEEP THE PEACE</span>
+        <span class="story-art" aria-hidden="true">
+          <img class="card-figure" src="11.png" alt="" loading="lazy" decoding="async">
+        </span>
+        <span class="story-card-title">POLICE<small dir="rtl">النظام فوق كل شيء</small></span>
+        <span class="story-card-action">REVEAL YOUR STORY <b>+</b></span>
+      </button>
+
+      <button class="story-card card-hope" data-story="medic" data-reveal style="--d:.1s" aria-haspopup="dialog" aria-label="اكتشف قصة الإسعاف">
+        <span class="story-corner">02<span>♥</span></span>
+        <span class="story-card-kicker">EVERY BREATH MATTERS</span>
+        <span class="story-art" aria-hidden="true">
+          <img class="card-figure" src="22.png" alt="" loading="lazy" decoding="async">
+        </span>
+        <span class="story-card-title">MEDIC<small dir="rtl">أنت أملهم في كل ثانية</small></span>
+        <span class="story-card-action">REVEAL YOUR STORY <b>+</b></span>
+      </button>
+
+      <button class="story-card card-risk" data-story="criminal" data-reveal style="--d:.2s" aria-haspopup="dialog" aria-label="اكتشف قصة المجرم">
+        <span class="story-corner">03<span>♣</span></span>
+        <span class="story-card-kicker">RISK EVERYTHING</span>
+        <span class="story-art" aria-hidden="true">
+          <img class="card-figure" src="44.png" alt="" loading="lazy" decoding="async">
+        </span>
+        <span class="story-card-title">CRIMINAL<small dir="rtl">الطريق يبدأ بخطوة</small></span>
+        <span class="story-card-action">REVEAL YOUR STORY <b>+</b></span>
+      </button>
+
+      <button class="story-card card-dream" data-story="citizen" data-reveal style="--d:.3s" aria-haspopup="dialog" aria-label="اكتشف قصة المواطن">
+        <span class="story-corner">04<span>♦</span></span>
+        <span class="story-card-kicker">BUILD FROM ZERO</span>
+        <span class="story-art" aria-hidden="true">
+          <img class="card-figure" src="33.png" alt="" loading="lazy" decoding="async">
+        </span>
+        <span class="story-card-title">CITIZEN<small dir="rtl">ابنِ اسمك من الصفر</small></span>
+        <span class="story-card-action">REVEAL YOUR STORY <b>+</b></span>
+      </button>
+    </div>
+
+    <div class="story-quick-select" role="group" aria-label="فتح بطاقة الدور">
+      <button type="button" data-story-open="police"><span>♠</span> الشرطة</button>
+      <button type="button" data-story-open="medic"><span>♥</span> الإسعاف</button>
+      <button type="button" data-story-open="criminal"><span>♣</span> المجرم</button>
+      <button type="button" data-story-open="citizen"><span>♦</span> المواطن</button>
+    </div>
+    <span class="story-footnote">اختر دورك، واكتب حكايتك.</span>
+  </section>
+
+  <!-- ============ RULES / قوانين المدينة ============ -->
+  <section class="rules-section" id="rules" aria-labelledby="rules-title" dir="rtl">
+    <div class="rules-heading" data-reveal dir="ltr">
+      <div class="rules-title-wrap">
+        <span class="rules-eyebrow">JOY TOWN / SERVER REGULATIONS</span>
+        <h2 id="rules-title">CITY <em>RULES.</em></h2>
+      </div>
+      <div class="rules-intro" dir="rtl">
+        <p>التزامك بالقوانين يضمن بيئة رول بلاي عادلة وواقعية وممتعة للجميع.<br>يرجى قراءة القوانين وفهمها جيداً قبل التقديم في الاختبار.</p>
+      </div>
+    </div>
+
+    <!-- شريط التبويبات التفاعلي -->
+    <div class="rules-tabs" role="tablist" aria-label="أقسام قوانين السيرفر" data-reveal>
+      <button class="rules-tab is-active" type="button" role="tab" aria-selected="true" data-tab="general">
+        <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M3 9l9-6 9 6M3 9a6 6 0 0 0 12 0M9 9a6 6 0 0 0 12 0"/></svg></span>
+        <span>قوانين عامة</span>
+      </button>
+      <button class="rules-tab" type="button" role="tab" aria-selected="false" data-tab="crime">
+        <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg></span>
+        <span>قوانين الإجرام والرهائن</span>
+      </button>
+      <button class="rules-tab" type="button" role="tab" aria-selected="false" data-tab="heists">
+        <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="12" x2="15" y2="15"/></svg></span>
+        <span>قوانين وجدول السرقات</span>
+      </button>
+      <button class="rules-tab" type="button" role="tab" aria-selected="false" data-tab="safezones">
+        <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <span>المناطق الآمنة والورش</span>
+      </button>
+      <button class="rules-tab" type="button" role="tab" aria-selected="false" data-tab="discord">
+        <span class="tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52l-.6 1.23a18.3 18.3 0 0 0-5.66 0l-.6-1.23a19.8 19.8 0 0 0-4.89 1.52C.59 8.91-.25 13.34.17 17.7a19.7 19.7 0 0 0 6 3.03l1.27-2.07a12.7 12.7 0 0 1-1.98-.95l.49-.38a14.1 14.1 0 0 0 12.1 0l.49.38c-.63.37-1.3.69-1.98.95l1.27 2.07a19.7 19.7 0 0 0 6-3.03c.49-5.06-.84-9.45-3.51-13.33ZM8.02 15.05c-1.17 0-2.13-1.08-2.13-2.4s.94-2.4 2.13-2.4c1.2 0 2.15 1.09 2.13 2.4 0 1.32-.94 2.4-2.13 2.4Zm7.96 0c-1.17 0-2.13-1.08-2.13-2.4s.94-2.4 2.13-2.4c1.2 0 2.15 1.09 2.13 2.4 0 1.32-.93 2.4-2.13 2.4Z"/></svg></span>
+        <span>قوانين الديسكورد</span>
+      </button>
+    </div>
+
+    <!-- ============ تبويب 1: قوانين عامة ============ -->
+    <div class="rules-tab-content is-active" id="tab-general" role="tabpanel" data-reveal>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-card-header">
+            <span class="rule-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a10 10 0 0 0-7 17.1L12 22l7-2.9A10 10 0 0 0 12 2z"/><path d="M9 10h.01M15 10h.01M9 15c1 1 5 1 6 0"/></svg>
+            </span>
+            <div class="rule-card-title-wrap">
+              <span class="rule-card-number">01</span>
+              <h3>أساسيات الرول بلاي واللعب النظيف</h3>
+            </div>
+          </div>
+          <div class="rule-card-body">
+            <ul class="rule-list">
+              <li><strong>التواصل غير الشرعي (Meta Gaming):</strong> يمنع منعاً باتاً استخدام أي معلومات من خارج اللعبة داخل الرول بلاي.</li>
+              <li><strong>استخدام المركبة كسلاح (VDM):</strong> ممنوع استخدام المركبة لدهس أو صدم اللاعبين كسلاح.</li>
+              <li><strong>القتل العشوائي (RDM):</strong> ممنوع قتل أي شخص عشوائياً دون سيناريو مسبق وسبب مقنع.</li>
+              <li><strong>الخروج عن الرول بلاي (Fail RP):</strong> يمنع الخروج عن تقمص الشخصية داخل السيرفر لأي سبب كان.</li>
+              <li><strong>القلتشات والهاك:</strong> يمنع استخدام القلتشات أو الثغرات البرمجية والبرامج الخارجية <span class="rule-tag-ban">باند نهائي</span>.</li>
+              <li><strong>برنامج التصوير:</strong> يجب تشغيل برنامج التصوير مع الصوت طوال فترة اللعب (20 دقيقة كحد أدنى للحفظ).</li>
+              <li><strong>التدخل في السيناريوهات:</strong> يمنع التدخل في أي سيناريو قائم ليس لك طرف فيه.</li>
+              <li><strong>الخروج أثناء السيناريو:</strong> يمنع الخروج من السيرفر (Combat Logging) أثناء أي سيناريو أو مطاردة.</li>
+              <li><strong>الملفات الضارة:</strong> يمنع استخدام أي ملف أو مود يضر ببيئة اللعب أو يمنح أفضلية غير عادلة.</li>
+              <li><strong>الجدية في المواقف:</strong> يجب أخذ جميع المواقف الجدية بشكل جدي مثل مواجهة عسكري أو مسعف.</li>
+              <li><strong>الاتفاقات الخارجية:</strong> يمنع أي اتفاق خارج الرول بلاي للتأثير على مجريات اللعب.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-card-header">
+            <span class="rule-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </span>
+            <div class="rule-card-title-wrap">
+              <span class="rule-card-number">02</span>
+              <h3>قواعد الإسقاط والوفاة (NLR)</h3>
+            </div>
+          </div>
+          <div class="rule-card-body">
+            <ul class="rule-list">
+              <li><strong>إهانة المسقط:</strong> يمنع إهانة الشخص المسقط بأي حال من الأحوال.</li>
+              <li><strong>التحدث أثناء الإسقاط:</strong> في حال أُسقطت يحق لك التحدث عن الألم فقط، ويمنع التحدث بشكل طبيعي.</li>
+              <li><strong>استخدام أمر ME/:</strong> يمنع استخدام أمر <code>/me</code> للتحدث أو التواصل في حال الإسقاط.</li>
+              <li><strong>تحريك الجثة:</strong> لا يحق لك تحريك الجثة إلا بغرض المساعدة وتقديم الإسعاف.</li>
+              <li><strong>نسيان الأحداث (NLR):</strong> في حال تحللت واستعدت وعيك بالمستشفى، يجب عليك نسيان المتسبب بموتك بالكامل.</li>
+              <li><strong>موقع الحالة:</strong> في حال تم إسقاطك في حالة يمنع منعاً باتاً الرجوع إلى موقع الحالة لنفس السيناريو.</li>
+              <li><strong>إسعاف المصابين:</strong> يمنع نقل المسقطين أو تعبئة بياناتهم في حال وجود المسعفين بالموقع.</li>
+              <li><strong>حمل اللاعب:</strong> يمنع حمل اللاعب أثناء ركوب المركبة وأيضاً أثناء وجود إطلاق نار (فايت).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-card-header">
+            <span class="rule-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <div class="rule-card-title-wrap">
+              <span class="rule-card-number">03</span>
+              <h3>الشخصيات والتعامل الأخلاقي</h3>
+            </div>
+          </div>
+          <div class="rule-card-body">
+            <ul class="rule-list">
+              <li><strong>فصل الشخصيات:</strong> ترابط الشخصية الأولى مع الشخصية الثانية ممنوع منعاً باتاً.</li>
+              <li><strong>نقل الأموال والأغراض:</strong> يمنع نقل الأغراض أو الأموال بين شخصيتين سواء مباشرة أو غير مباشرة <span class="rule-tag-delete">عقوبتها حذف الشخصيتين</span>.</li>
+              <li><strong>منع الشخصنة:</strong> الشخصنة ممنوعة منعاً باتاً بجميع أنواعها وأشكالها داخل السيرفر.</li>
+              <li><strong>طريقة التعرف:</strong> التعرف على الشخص يكون عن طريق الشكل، ويمنع التعرف عليه من صوته إطلاقاً.</li>
+              <li><strong>التعرف بالآيدي أو الآيتم:</strong> يمنع التعرف على الأشخاص من خلال إعطاء آيتم أو الآيدي (الكذب باسمك وعند إعطائه آيتم يُعرف الاسم).</li>
+              <li><strong>الاحترام والآداب:</strong> يجب احترام الجميع والتعامل بواقعية، ويمنع إهانتهم أو استفزازهم بطرق غير أخلاقية، ويمنع الكلام الجنسي منعاً باتاً.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-card-header">
+            <span class="rule-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg>
+            </span>
+            <div class="rule-card-title-wrap">
+              <span class="rule-card-number">04</span>
+              <h3>المركبات والتجهيزات والموظفين</h3>
+            </div>
+          </div>
+          <div class="rule-card-body">
+            <ul class="rule-list">
+              <li><strong>إطلاق النار أثناء القيادة:</strong> يمنع منعاً باتاً أن يطلق السائق النار أثناء قيادة المركبة.</li>
+              <li><strong>القفزات الانتحارية:</strong> يمنع القفز بالمركبة قفزات انتحارية غير واقعية.</li>
+              <li><strong>الخوذات:</strong> يمنع ارتداء أو استعمال أي خوذة أثناء مشاركتك في أي اشتباك ناري.</li>
+              <li><strong>بدلة الغوص:</strong> يمنع منعاً باتاً لبس عدة الغوص خارج البحر.</li>
+              <li><strong>الطائرات:</strong> يمنع سرقة أو استعمال الطائرات دون إذن وتصريح مسبق.</li>
+              <li><strong>ملابس الوظائف الرسمية:</strong> يمنع تقليد ملابس الشرطة والمسعفين.</li>
+              <li><strong>حماية المسعفين والعقاريين:</strong> يمنع خطف أو التعرّض لكل من المسعفين وموظفي العقار.</li>
+              <li><strong>سرقة أغراض الحكومة:</strong> يمنع سرقة أغراض وتجهيزات الشرطة أو المسعفين.</li>
+              <li><strong>التربص بالموظفين:</strong> يمنع التربص للموظفين الحكوميين وانتظارهم عند مقر الوظيفة أو نقاط التوقف.</li>
+              <li><strong>إزعاج أماكن العمل:</strong> يمنع إزعاج موظفي المطاعم والورش والعساكر والمسعفين في أماكن عملهم أو التلفظ عليهم.</li>
+              <li><strong>تواجد المسعفين:</strong> يمنع على المسعفين التواجد في مكان إطلاق نار إلا بعد التأكد التام من خلو الموقع.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ تبويب 2: قوانين الإجرام والرهائن ============ -->
+    <div class="rules-tab-content" id="tab-crime" role="tabpanel" hidden>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-card-header">
+            <span class="rule-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </span>
+            <div class="rule-card-title-wrap">
+              <span class="rule-card-number">01</span>
+              <h3>قواعد السلاح والتهديد والفايت</h3>
+            </div>
+          </div>
+          <div class="rule-card-body">
+            <ul class="rule-list">
+              <li><strong>مقاومة السلاح:</strong> يمنع مقاومة السلاح الأبيض في حال عدم وجود أي سلاح بيدك، ويمنع مقاومة السلاح الناري بسلاح أبيض.</li>
+              <li><strong>التهديد المباشر:</strong> يجب أن يكون التهديد مباشراً ووجهاً لوجه، حيث لا يمكنك التهديد وأنت بداخل المركبة.</li>
+              <li><strong>حقيبة مخططات الأسلحة:</strong> يحق لك تهديد الشخص فقط عند رؤيته يحمل الحقيبة، ولا يحق لحامل الحقيبة المقاومة أبداً.</li>
+              <li><strong>أخذ الشنطة:</strong> يسمح بالتهديد وأخذ الشنطة في حالة واحدة فقط: أن ترى الشخص أمامك وهو يأخذ الشنطة، وغير ذلك لا يُسمح.</li>
+              <li><strong>الكلبشة والاستسلام:</strong> يمنع منعاً باتاً كلبشة أي شخص قبل استسلامه لك ورفع يديه.</li>
+              <li><strong>توقيت الإعصار:</strong> تمنع جميع عمليات السرقة والإجرام قبل الإعصار بـ 20 دقيقة.</li>
+              <li><strong>ارتداء القناع:</strong> يجب عليك ارتداء القناع في السرقات لتجنب إدراجك في قائمة المطلوبين.</li>
+              <li><strong>الهوم والإيموتات:</strong> يمنع استعمال الهوم أو الإيموتات نهائياً وقت الاشتباك الناري (الفايت).</li>
+              <li><strong>افتعال الفايتات:</strong> يمنع افتعال فايت دون سبب مقنع <span class="rule-tag-ban">عقوبتها باند نهائي</span>.</li>
+              <li><strong>إطلاق النار الاستفزازي:</strong> لا يُسمح بإطلاق النار العشوائي بهدف جذب العساكر.</li>
+              <li><strong>مركبات الوظائف:</strong> يمنع الإجرام كالخطف والسرقات بمركبات مخصصة للوظائف مثل التاكسي والسطحات.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-card-header">
+            <span class="rule-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+            </span>
+            <div class="rule-card-title-wrap">
+              <span class="rule-card-number">02</span>
+              <h3>شروط الخطف والرهائن والتفاوض</h3>
+            </div>
+          </div>
+          <div class="rule-card-body">
+            <ul class="rule-list">
+              <li><strong>تقمص دور الرهينة:</strong> يجب على المواطن المخطوف تقمص شخصية الرهينة وتقدير الخوف على الحياة (Fear RP).</li>
+              <li><strong>مهلة بدء السيناريو:</strong> إذا خطفت مواطناً، لديك 20 دقيقة فقط لبداية تنفيذ السيناريو؛ وفي حال انقضائها دون بدء السيناريو يجب إطلاق سراحه فوراً.</li>
+              <li><strong>التوجه للتفاوض:</strong> في حال خطف الرهينة يجب على الخاطف التوجه لمكان التفاوض بأسرع وقت وعدم إطالة الخطف.</li>
+              <li><strong>فدية الرهينة:</strong> الحد الأقصى لطلب فدية تحرير رهينة واحدة هو <strong>2,000$</strong> ويكون التسليم يداً بيد.</li>
+              <li><strong>قتل الرهينة والمواطن:</strong> في حال تم تهديد المواطن وانصاع لأوامرك لا يحق لك قتله تحت أي ظرف؛ في حال عدم الانصياع والمقاومة يحق قتله.</li>
+              <li><strong>أسباب القتل:</strong> يمنع قتل أي شخص لسبب تافه أو لأمر شخصي، ويجب أن يكون السبب مقنعاً ومبرراً بالرول بلاي.</li>
+              <li><strong>هروب الرهينة:</strong> يحق للرهينة الهروب في حال وجود فرصة مثل عدم انتباه الخاطفين أو استغفالهم، ولا تعتبر مخطوفة إلا بعد تقييدها.</li>
+              <li><strong>الاتفاق مع الرهينة:</strong> يمنع منعاً باتاً الاتفاق المسبق مع الرهينة (Fake Hostage).</li>
+              <li><strong>مفاوض الشرطة والمجرمين:</strong> يمنع منعاً باتاً الاعتداء على مفاوض الشرطة، ويمنع الاعتداء على مفاوض المجرمين.</li>
+              <li><strong>موقع الرهينة:</strong> يمنع التفاوض على رهينة ليست متواجدة داخل موقع الجريمة.</li>
+              <li><strong>إهانة المخطوف:</strong> يمنع إهانة المخطوف أو الضغط عليه أو استفزازه <span class="rule-tag-ban">يترتب على ذلك الباند</span>.</li>
+              <li><strong>عقوبات الخوف على الحياة:</strong> عدم الخوف على حياتك = <span class="rule-tag-delete">حذف الشخصية</span> | عدم الخوف على حياة الرهينة = <span class="rule-tag-ban">باند لمدة يوم</span>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-card-header">
+            <span class="rule-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <div class="rule-card-title-wrap">
+              <span class="rule-card-number">03</span>
+              <h3>قواعد العصابات والعداوات</h3>
+            </div>
+          </div>
+          <div class="rule-card-body">
+            <ul class="rule-list">
+              <li><strong>حد أفراد العصابة:</strong> الحد الأقصى لأعضاء العصابة الواحدة داخل السيرفر هو <strong>15 عضواً فقط</strong>.</li>
+              <li><strong>تحالف العصابات:</strong> يمنع تحالف العصابات ضد الشرطة أو ضد عصابة أخرى منعاً باتاً.</li>
+              <li><strong>ملابس العصابات:</strong> يمنع منعاً باتاً تقليد ملابس وألوان العصابات الأخرى.</li>
+              <li><strong>الاستيقاف المروري:</strong> يمنع في حالة الاستيقاف المروري من قِبل الشرطة خطف العسكري أو قتله.</li>
+              <li><strong>الخطف بوجود مدنيين:</strong> يمنع الخطف أو التهديد في حال وجود 2 من المدنيين/المواطنين أو أكثر بالموقع.</li>
+              <li><strong>الاستدراج عبر التطبيقات:</strong> يمنع استدراج الشرطي، الميكانيكي، أو التاكسي (كإرسال طلب لهم بغرض خطفهم)، ويمنع استدراج المواطنين عبر التطبيقات للخطف.</li>
+              <li><strong>افتعال العداوات والشخصنة:</strong> يمنع افتعال عداوة بهدف الشخصنة أو التلويت والقتل واستخدام الأسلحة <span class="rule-tag-ban">عقوبتها تبنيد مباشر</span>.</li>
+              <li><strong>شروط إعلان العداوة:</strong> العداوة لا تبدأ إلا بعد عدة خلافات واقعية داخل الرول بلاي موثقة، وبحد أدنى <strong>3 مواقف مصورة بالفيديو</strong>.</li>
+              <li><strong>التخطيط للسرقات:</strong> يجب التخطيط المسبق وتحديد الهدف والتدخل الخارجي قبل بدء أي سرقة.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ تبويب 3: قوانين وجدول السرقات ============ -->
+    <div class="rules-tab-content" id="tab-heists" role="tabpanel" hidden>
+      <div class="heists-meta-grid">
+        <div class="heists-meta-card">
+          <div>
+            <h4>الحد الأقصى للحالات المفتوحة للمواطنين</h4>
+            <p>أقصى عدد مسموح به للحالات الإجرامية النشطة في نفس الوقت</p>
+          </div>
+          <span class="heists-meta-badge" dir="ltr">8 MAX</span>
+        </div>
+        <div class="heists-meta-card">
+          <div>
+            <h4>الحد الأقصى للحالات المفتوحة للشرطة</h4>
+            <p>أقصى طاقة استيعابية لمشاركة العساكر في الحالات المتزامنة</p>
+          </div>
+          <span class="heists-meta-badge" dir="ltr">12 MAX</span>
+        </div>
+      </div>
+
+      <!-- جدول أعداد السرقات الرسمي -->
+      <div class="heists-table-wrap">
+        <table class="heists-table">
+          <thead>
+            <tr>
+              <th>نوع السرقة (Robbery)</th>
+              <th>عدد المجرمين المسموح</th>
+              <th>عدد العساكر المسموح</th>
+              <th>شرط الرهينة</th>
+              <th>الملاحظات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>سرقة الصراف الآلي (ATM)</strong></td>
+              <td>1 - 3 مجرمين</td>
+              <td>2 - 4 عساكر</td>
+              <td><span class="heist-badge free">لا يشترط</span></td>
+              <td>سرقة سريعة بدون تفاوض مطول</td>
+            </tr>
+            <tr>
+              <td><strong>سرقة البقالة (Store Robbery)</strong></td>
+              <td>1 - 3 مجرمين</td>
+              <td>2 - 4 عساكر</td>
+              <td><span class="heist-badge optional">يسمح بدون رهينة</span></td>
+              <td>السرقة الوحيدة المسموح بها بدون رهينة</td>
+            </tr>
+            <tr>
+              <td><strong>سرقة منزل (House Robbery)</strong></td>
+              <td>2 - 4 مجرمين</td>
+              <td>4 - 5 عساكر</td>
+              <td><span class="heist-badge required">مطلوب رهينة</span></td>
+              <td>يلزم وجود رهينة لبدء التفاوض</td>
+            </tr>
+            <tr>
+              <td><strong>سرقة منزل كبير (Big House Robbery)</strong></td>
+              <td>4 - 5 مجرمين</td>
+              <td>5 - 6 عساكر</td>
+              <td><span class="heist-badge required">مطلوب رهينة</span></td>
+              <td>يلزم وجود رهينة والالتزام بالعدد</td>
+            </tr>
+            <tr>
+              <td><strong>محل المجوهرات (Jewelry Robbery)</strong></td>
+              <td>6 - 10 مجرمين</td>
+              <td>7 - 14 عسكري</td>
+              <td><span class="heist-badge required">إجباري وجود رهينة</span></td>
+              <td>ممنوع البدء دون وجود رهينة داخل الموقع</td>
+            </tr>
+            <tr>
+              <td><strong>بنك فليكا (Bank Fleeca)</strong></td>
+              <td>6 - 10 مجرمين</td>
+              <td>7 - 14 عسكري</td>
+              <td><span class="heist-badge required">إجباري وجود رهينة</span></td>
+              <td>تفاوض كامل مع الشرطة بموقع البنك</td>
+            </tr>
+            <tr>
+              <td><strong>البنك المركزي (Central Bank Robbery)</strong></td>
+              <td>8 - 12 مجرمين</td>
+              <td>9 - 15 عسكري</td>
+              <td><span class="heist-badge required">إجباري وجود رهينة</span></td>
+              <td>أعلى مستوى سرقة بالمدينة وتتطلب تخطيطاً شاملاً</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-card-header">
+            <span class="rule-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <div class="rule-card-title-wrap">
+              <span class="rule-card-number">01</span>
+              <h3>شروط وضوابط تنفيذ السرقات</h3>
+            </div>
+          </div>
+          <div class="rule-card-body">
+            <ul class="rule-list">
+              <li><strong>احترام المفاوض والجدية:</strong> عند حدوث سرقة يجب احترام المفاوض من طرف الشرطة والجدية التامة وعدم الاستهبال.</li>
+              <li><strong>احترام الرهينة:</strong> إذا تم خطف مواطن يجب احترامه وعدم إهانته أو التقليل منه، وإذا كانت الرهينة غير مستجيبة يتم إبلاغ مفاوض الشرطة بذلك.</li>
+              <li><strong>حظر قتل الرهينة:</strong> يمنع قتل الرهينة إلا في حال عدم استجابة مفاوض الشرطة، مع وجوب أن يكون السبب مقنعاً ومبرراً.</li>
+              <li><strong>أماكن الخطف الممنوعة:</strong> يمنع الخطف أمام رجال الشرطة أو المسعفين، كما يمنع الخطف أمام المراكز الحكومية الرئيسية.</li>
+              <li><strong>شرط وجود الرهينة:</strong> يمنع تنفيذ أي سرقة بدون رهينة، والسرقة الوحيدة المستثناة والمسموح بها بدون رهينة هي سرقة البقالة (Store).</li>
+              <li><strong>الالتزام التام بالأعداد:</strong> يمنع زيادة أي مجرم عن العدد المسموح به المذكور في الجدول أعلاه.</li>
+              <li><strong>نقص عدد العساكر:</strong> في حال كان عدد العساكر أقل من الحد الأدنى المذكور، تُعتبر سرقة الحالة ملغية بالكامل دون تفاوض.</li>
+              <li><strong>تفشيل التفاوض:</strong> يمنع تفشيل التفاوض من أي طرف دون سبب مقنع وواقعي.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ تبويب 4: المناطق الآمنة والمطاعم والورش ============ -->
+    <div class="rules-tab-content" id="tab-safezones" role="tabpanel" hidden>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-card-header">
+            <span class="rule-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <div class="rule-card-title-wrap">
+              <span class="rule-card-number">01</span>
+              <h3>ضوابط المناطق الآمنة (Green Zones)</h3>
+            </div>
+          </div>
+          <div class="rule-card-body">
+            <ul class="rule-list">
+              <li><strong>تعريف المنطقة الآمنة:</strong> أي منطقة يتواجد بها اثنان (2) من المدنيين أو المواطنين على الأقل تُعد تلقائياً منطقة آمنة يمنع فيها الخطف أو الاعتداء.</li>
+              <li><strong>المقرات الحكومية:</strong> جميع مقرات الوظائف الحكومية (مراكز الشرطة، المستشفيات) ومحيطها تُعتبر مناطق آمنة كلياً.</li>
+              <li><strong>الممنوعات والترويج:</strong> يمنع منعاً باتاً بيع أي أشياء ممنوعة في المناطق العامة أو الترويج والتلميح لها.</li>
+              <li><strong>الاعتداء والقتل:</strong> يمنع منعاً باتاً القتل، الخطف، أو دعس الأشخاص داخل المناطق الآمنة تحت أي ظرف.</li>
+              <li><strong>إطلاق النار:</strong> يمنع إطلاق النار داخل المناطق الآمنة منعاً باتاً.</li>
+              <li><strong>الاحتماء والاستفزاز:</strong> يمنع الاحتماء والاستفزاز بالمناطق الآمنة، وفي حال الاحتماء يحق للطرف الآخر استكمال السيناريو في حالة الخطف فقط، ويُستثنى من ذلك مركز الشرطة والمستشفى.</li>
+              <li><strong>سيارات المتجر:</strong> يمنع سرقة سيارات المتجر داخل المناطق الآمنة.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-card-header">
+            <span class="rule-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+            </span>
+            <div class="rule-card-title-wrap">
+              <span class="rule-card-number">02</span>
+              <h3>قوانين المطاعم والورش والمحلات التجارية</h3>
+            </div>
+          </div>
+          <div class="rule-card-body">
+            <ul class="rule-list">
+              <li><strong>احترام العاملين:</strong> يجب احترام موظفي المطاعم والورش وعدم الإساءة لهم أو التقليل منهم في أماكن عملهم.</li>
+              <li><strong>الإجرام بملابس الوظيفة:</strong> يمنع الإجرام أو ممارسة أي نشاط غير قانوني أثناء ارتداء ملابس الوظيفة.</li>
+              <li><strong>دفع الحساب:</strong> يمنع سرقة أي موظف أو التهرب من دفع الحساب بعد تقديم الخدمة أو الطعام أو الصيانة.</li>
+              <li><strong>الاعتداء داخل المحلات:</strong> خطف المواطنين أو الموظفين أو قتلهم داخل المحلات التجارية والورش ممنوع منعاً باتاً.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ تبويب 5: قوانين الديسكورد ============ -->
+    <div class="rules-tab-content" id="tab-discord" role="tabpanel" hidden>
+      <div class="rules-grid">
+        <div class="rule-card">
+          <div class="rule-card-header">
+            <span class="rule-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52l-.6 1.23a18.3 18.3 0 0 0-5.66 0l-.6-1.23a19.8 19.8 0 0 0-4.89 1.52C.59 8.91-.25 13.34.17 17.7a19.7 19.7 0 0 0 6 3.03l1.27-2.07a12.7 12.7 0 0 1-1.98-.95l.49-.38a14.1 14.1 0 0 0 12.1 0l.49.38c-.63.37-1.3.69-1.98.95l1.27 2.07a19.7 19.7 0 0 0 6-3.03c.49-5.06-.84-9.45-3.51-13.33ZM8.02 15.05c-1.17 0-2.13-1.08-2.13-2.4s.94-2.4 2.13-2.4c1.2 0 2.15 1.09 2.13 2.4 0 1.32-.94 2.4-2.13 2.4Zm7.96 0c-1.17 0-2.13-1.08-2.13-2.4s.94-2.4 2.13-2.4c1.2 0 2.15 1.09 2.13 2.4 0 1.32-.93 2.4-2.13 2.4Z"/></svg>
+            </span>
+            <div class="rule-card-title-wrap">
+              <span class="rule-card-number">01</span>
+              <h3>الآداب والمحظورات العامة</h3>
+            </div>
+          </div>
+          <div class="rule-card-body">
+            <ul class="rule-list">
+              <li><strong>الاحترام للجميع:</strong> يمنع الشتم، العنصرية، أو الإساءة لأي عضو، والمحافظة على بيئة ودية وآمنة للجميع.</li>
+              <li><strong>الترويج والإعلانات:</strong> ممنوع الترويج لسيرفرات أو حسابات أو روابط خارجية بدون إذن مسبق من الإدارة.</li>
+              <li><strong>المحتوى المحظور:</strong> يمنع نشر أو مناقشة أي محتوى خادش للحياء، عنف، طائفي، أو سياسي.</li>
+              <li><strong>الألفاظ:</strong> ممنوع استخدام أي ألفاظ نابية، بذيئة، أو تحريضية في جميع القنوات الصوتية والكتابية.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rule-card">
+          <div class="rule-card-header">
+            <span class="rule-card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <div class="rule-card-title-wrap">
+              <span class="rule-card-number">02</span>
+              <h3>استخدام القنوات والبوتات والإدارة</h3>
+            </div>
+          </div>
+          <div class="rule-card-body">
+            <ul class="rule-list">
+              <li><strong>استخدام القنوات:</strong> لا ترسل رسائل عشوائية (سبام) أو محتوى خارج عن موضوع الروم، والتزم بعنوان كل قناة واستخدمها لغرضها المحدد.</li>
+              <li><strong>التعامل مع البوتات:</strong> لا تُكثر من الأوامر التي تزعج باقي الأعضاء، ويمنع استغلال أوامر البوتات بشكل مسيء أو تخريبي.</li>
+              <li><strong>احترام الطاقم الإداري:</strong> لا تتجادل مع طاقم الإدارة في الشات العام؛ وبدلاً من ذلك تواصل معهم عبر نظام التذاكر (Tickets) المخصص.</li>
+              <li><strong>قرارات الإدارة:</strong> قرارات الطاقم الإداري نهائية وتُتخذ للحفاظ على نظام واستقرار السيرفر.</li>
+              <li><strong>الفعاليات والمسابقات:</strong> الغش أو محاولة التلاعب بالمسابقات يؤدي إلى الإقصاء الفوري وحرمانك من الجوائز.</li>
+              <li><strong>التعديلات والتحديثات:</strong> الإدارة تحتفظ بحق تعديل القوانين في أي وقت، وسيتم الإعلان عن أي تغيير مهم في روم التحديثات.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- تنبيه ختامي وزر الاختبار -->
+    <div class="rules-notice" data-reveal>
+      <div class="notice-wrap">
+        <span class="notice-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </span>
+        <div class="notice-content">
+          <h4>تنبيه: دخولك السيرفر يعني موافقتك الكاملة على هذه القوانين</h4>
+          <p>الجهل بالقوانين لا يعفيك من المساءلة أو العقوبة. أي مخالفة قد تؤدي إلى التحذير أو السجن أو حذف الشخصية أو الحظر النهائي بحسب نوع المخالفة.</p>
+        </div>
+      </div>
+      <a class="notice-btn" href="#apply"><span>جاهز؟ ابدأ الاختبار الآن</span><span aria-hidden="true">←</span></a>
+    </div>
+  </section>
+
+  <!-- ============ APPLY /الاختبار الالكتروني ============ -->
+  <section class="apply-section" id="apply" aria-labelledby="apply-title">
+    <div class="apply-heading" data-reveal dir="ltr">
+      <div class="apply-title-wrap">
+        <span class="apply-eyebrow">JOY TOWN / CHARACTER APPLICATION</span>
+        <h2 id="apply-title">WRITE YOUR <em>APPLICATION.</em></h2>
+      </div>
+      <div class="apply-intro" dir="rtl">
+        <p>املأ بياناتك واكتب قصتك في سطرين،<br>وستصلك فرصة البدء في المدينة عبر ديسكورد.</p>
+      </div>
+    </div>
+
+    <div class="apply-card" data-reveal>
+
+<!-- شريط الخطوات الثلاث -->
+      <div class="apply-steps-nav" dir="rtl" aria-label="خطوات التقديم">
+        <div class="step-nav-item is-active" data-step-indicator="1">
+          <span class="step-num">01</span>
+          <span class="step-text">تسجيل الدخول بديسكورد</span>
+        </div>
+        <div class="step-nav-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
+        <div class="step-nav-item" data-step-indicator="2">
+          <span class="step-num">02</span>
+          <span class="step-text">تأكيد قراءة القوانين</span>
+        </div>
+        <div class="step-nav-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </div>
+        <div class="step-nav-item" data-step-indicator="3">
+          <span class="step-num">03</span>
+          <span class="step-text">بيانات الشخصية</span>
+        </div>
+      </div>
+
+      <!-- شبكة الخطوات الثلاث بالعرض -->
+      <div class="apply-steps-grid">
+
+        <!-- ============ الخطوة 1: تسجيل الدخول بديسكورد ============ -->
+        <div class="apply-step-pane is-active" data-step-pane="1" dir="rtl">
+          <div class="step-pane-header">
+            <div class="step-pane-title-wrap">
+              <span class="step-pane-badge">01</span>
+              <h3 class="step-pane-title">الخطوة الأولى: تسجيل الدخول</h3>
+            </div>
+            <span class="step-pane-status is-active" data-step-status="1">
+              <svg viewBox="0 0 24 24" width="8" height="8" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5"/></svg>
+              <span>الخطوة الحالية</span>
+            </span>
+          </div>
+
+          <div class="step-pane-body">
+            <!-- في حال لم يسجل دخوله بعد -->
+            <div class="discord-login-box" data-discord-guest>
+              <div class="discord-login-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="44" height="44"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52l-.6 1.23a18.3 18.3 0 0 0-5.66 0l-.6-1.23a19.8 19.8 0 0 0-4.89 1.52C.59 8.91-.25 13.34.17 17.7a19.7 19.7 0 0 0 6 3.03l1.27-2.07a12.7 12.7 0 0 1-1.98-.95l.49-.38a14.1 14.1 0 0 0 12.1 0l.49.38c-.63.37-1.3.69-1.98.95l1.27 2.07a19.7 19.7 0 0 0 6-3.03c.49-5.06-.84-9.45-3.51-13.33ZM8.02 15.05c-1.17 0-2.13-1.08-2.13-2.4s.94-2.4 2.13-2.4c1.2 0 2.15 1.09 2.13 2.4 0 1.32-.94 2.4-2.13 2.4Zm7.96 0c-1.17 0-2.13-1.08-2.13-2.4s.94-2.4 2.13-2.4c1.2 0 2.15 1.09 2.13 2.4 0 1.32-.93 2.4-2.13 2.4Z"/></svg>
+              </div>
+              <div class="discord-login-info">
+                <p>سجل دخولك المباشر بحساب Discord للتحقق التلقائي من هويتك وجلب صورتك واسمك بدون كتابة يدوية.</p>
+              </div>
+              <div class="discord-login-actions">
+                <button type="button" class="btn-discord-login" data-action-discord-login>
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52l-.6 1.23a18.3 18.3 0 0 0-5.66 0l-.6-1.23a19.8 19.8 0 0 0-4.89 1.52C.59 8.91-.25 13.34.17 17.7a19.7 19.7 0 0 0 6 3.03l1.27-2.07a12.7 12.7 0 0 1-1.98-.95l.49-.38a14.1 14.1 0 0 0 12.1 0l.49.38c-.63.37-1.3.69-1.98.95l1.27 2.07a19.7 19.7 0 0 0 6-3.03c.49-5.06-.84-9.45-3.51-13.33ZM8.02 15.05c-1.17 0-2.13-1.08-2.13-2.4s.94-2.4 2.13-2.4c1.2 0 2.15 1.09 2.13 2.4 0 1.32-.94 2.4-2.13 2.4Zm7.96 0c-1.17 0-2.13-1.08-2.13-2.4s.94-2.4 2.13-2.4c1.2 0 2.15 1.09 2.13 2.4 0 1.32-.93 2.4-2.13 2.4Z"/></svg>
+                  <span>تسجيل الدخول بحساب Discord</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </button>
+                <span class="direct-login-hint">توثيق مباشر وآمن عبر تطبيق Discord الرسمي</span>
+              </div>
+            </div>
+
+            <!-- بطاقة المستخدم بعد تسجيل الدخول -->
+            <div class="discord-user-card" data-discord-user-card hidden>
+              <div class="discord-user-top">
+                <img class="discord-avatar" data-user-avatar src="LOGO.png" alt="Discord Avatar">
+                <div class="discord-user-meta">
+                  <div class="discord-badge-auth">
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>حساب ديسكورد موثّق</span>
+                  </div>
+                  <h4 data-user-name>اسم المستخدم</h4>
+                  <span class="discord-tag" data-user-tag dir="ltr">@username (ID: 000000)</span>
+                </div>
+                <button type="button" class="btn-discord-switch" data-action-discord-logout title="تبديل الحساب">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                  <span>تبديل</span>
+                </button>
+              </div>
+              <div class="discord-step-footer">
+                <p class="step-hint">تم ربط حسابك بنجاح. الخطوة الثانية متاحة الآن للمتابعة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ الخطوة 2: تأكيد قراءة القوانين ============ -->
+        <div class="apply-step-pane is-locked" data-step-pane="2" dir="rtl">
+          <div class="step-pane-header">
+            <div class="step-pane-title-wrap">
+              <span class="step-pane-badge">02</span>
+              <h3 class="step-pane-title">الخطوة الثانية: تأكيد القوانين</h3>
+            </div>
+            <span class="step-pane-status is-locked" data-step-status="2">
+              <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+              <span>مقفلة</span>
+            </span>
+          </div>
+
+          <div class="step-lock-curtain" data-lock-curtain="2">
+            <div class="lock-curtain-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            </div>
+            <span class="lock-curtain-text">الخطوة مغلقة حالياً</span>
+            <span class="lock-curtain-sub">سجّل دخولك بحساب ديسكورد في الخطوة الأولى لفك القفل وإلغاء الضبابية</span>
+          </div>
+
+          <div class="step-pane-body">
+            <div class="rules-confirm-head">
+              <p>يجب مراجعة وتأكيد الالتزام بالقواعد الأساسية التالية:</p>
+            </div>
+
+            <div class="rules-confirm-list">
+              <label class="rule-checkbox-item">
+                <input type="checkbox" name="rule_agree_1" required checked>
+                <span class="check-text">
+                  <strong>قواعد الرول بلاي الأساسية:</strong> الالتزام التام بتقمص الشخصية وتقدير الخوف (Fear RP) ومنع القتل أو الصدم العشوائي (RDM/VDM).
+                </span>
+              </label>
+
+              <label class="rule-checkbox-item">
+                <input type="checkbox" name="rule_agree_2" required checked>
+                <span class="check-text">
+                  <strong>فصل الشخصيات:</strong> منع نقل الأموال بين الشخصيات ومنع الشخصنة بجميع أشكالها داخل السيرفر.
+                </span>
+              </label>
+
+              <label class="rule-checkbox-item">
+                <input type="checkbox" name="rule_agree_3" required checked>
+                <span class="check-text">
+                  <strong>ضوابط السرقات والرهائن:</strong> الالتزام بأعداد العساكر والمجرمين المحددة ومنع تزوير الرهائن.
+                </span>
+              </label>
+
+              <label class="rule-checkbox-item">
+                <input type="checkbox" name="rule_agree_4" required checked>
+                <span class="check-text">
+                  <strong>الاحترام وتذاكر الدعم:</strong> احترام جميع اللاعبين والإدارة واستخدام التذاكر لأي استفسار أو بلاغ.
+                </span>
+              </label>
+            </div>
+
+            <div class="rules-step-actions">
+              <button type="button" class="btn-step-next" data-btn-confirm-rules>
+                <span>أقر بالقوانين وأوافق عليها</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ الخطوة 3: تقديم المعلومات وقصة الشخصية ============ -->
+        <div class="apply-step-pane is-locked" data-step-pane="3" dir="rtl">
+          <div class="step-pane-header">
+            <div class="step-pane-title-wrap">
+              <span class="step-pane-badge">03</span>
+              <h3 class="step-pane-title">الخطوة الثالثة: بيانات الشخصية</h3>
+            </div>
+            <span class="step-pane-status is-locked" data-step-status="3">
+              <svg viewBox="0 0 24 24" width="11" height="11" fill="currentColor" aria-hidden="true"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+              <span>مقفلة</span>
+            </span>
+          </div>
+
+          <div class="step-lock-curtain" data-lock-curtain="3">
+            <div class="lock-curtain-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            </div>
+            <span class="lock-curtain-text">الخطوة مغلقة حالياً</span>
+            <span class="lock-curtain-sub">أكد قراءة القوانين في الخطوة الثانية لفك القفل وتعبئة ملف شخصيتك</span>
+          </div>
+
+          <div class="step-pane-body">
+            <div class="applicant-connected-bar">
+              <div class="applicant-mini-profile">
+                <img class="applicant-mini-avatar" data-user-avatar src="LOGO.png" alt="Avatar">
+                <div>
+                  <span class="applicant-sub">صاحب الطلب:</span>
+                  <strong data-user-name>الاسم</strong> <small dir="ltr" data-user-tag>@username</small>
+                </div>
+              </div>
+              <span class="role-preview-badge">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                <span>رتبة [ مواطن معتمد ] فور الإرسال</span>
+              </span>
+            </div>
+
+            <form class="story-form" novalidate>
+              <div class="form-grid">
+                <label class="field">
+                  <span>اسمك الكامل</span>
+                  <input type="text" name="playerName" maxlength="40" placeholder="مثال: عبدالله محمد" autocomplete="name" required>
+                </label>
+                <label class="field">
+                  <span>عمرك</span>
+                  <input type="number" name="playerAge" min="13" max="99" inputmode="numeric" placeholder="18" required>
+                </label>
+                <label class="field">
+                  <span>اسم الشخصية</span>
+                  <input type="text" name="charName" maxlength="40" placeholder="مثال: سلمان الحربي" required>
+                </label>
+                <label class="field">
+                  <span>عمر الشخصية</span>
+                  <input type="number" name="charAge" min="18" max="99" inputmode="numeric" placeholder="25" required>
+                </label>
+                <label class="field field-full">
+                  <span>قصة حياة الشخصية وخلفيتها</span>
+                  <textarea name="story" rows="3" maxlength="400" placeholder="ما ماضي الشخصية وما الهدف الذي دفعها لدخول JOY TOWN؟" required></textarea>
+                </label>
+              </div>
+
+              <p class="form-error" data-form-error role="alert" hidden></p>
+
+              <div class="form-actions">
+                <button class="form-submit" type="submit">
+                  <span data-submit-label>إرسال التقديم واعتماد الرتبة تلقائياً</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div> <!-- نهاية .apply-steps-grid -->
+
+<!-- ============ شاشة النجاح ومنح الرتبة ============ -->
+      <div class="form-success" data-form-success hidden dir="rtl">
+        <span class="success-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div class="success-role-badge">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          <span>تم منحك رتبة [ مواطن معتمد / Whitelisted ] بنجاح!</span>
+        </div>
+        <h3>تم اعتماد تقديمك وتسجيلك بالكامل!</h3>
+        <p>أهلاً بك يا <b><span data-success-char-name></span></b> (<span data-success-user-tag dir="ltr">@user</span>) في مدينة <b>JOY TOWN</b>.<br>تم إرسال ملفك وصورتك وحسابك المعتمد تلقائياً إلى إدارة السيرفر في الديسكورد.</p>
+        <div class="success-actions">
+          <a class="btn-success-connect" href="#connect">
+            <span>دخول السيرفر الآن عبر FiveM</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <button type="button" class="btn-success-reset form-done">تقديم شخصية أخرى</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONNECT ============ -->
+  <section class="city-access" id="connect" aria-labelledby="connect-title" dir="ltr">
+    <div class="access-content">
+      <div class="access-heading" data-reveal>
+        <div class="access-topline">
+          <span class="access-partners">
+            <span class="access-index">JOY TOWN</span>
+            <span class="access-partner-cross" aria-hidden="true">×</span>
+            <span class="access-fivem">FIVEM</span>
+          </span>
+          <span class="access-platform">ROLEPLAY EXPERIENCE</span>
+        </div>
+        <div class="access-invitation">
+          <span class="access-brand" aria-hidden="true">
+            <img src="LOGO.png" alt="JOY TOWN" width="104" height="104">
+          </span>
+          <div>
+            <h2 class="access-title" id="connect-title" dir="rtl">المدينة تنتظرك.</h2>
+            <span class="access-caption">MAKE YOUR ENTRANCE.</span>
+          </div>
+        </div>
+        <div class="access-bottomline"><span>YOUR NEXT STORY STARTS HERE</span><span aria-hidden="true">✦</span></div>
+      </div>
+
+      <!-- ============ SERVER LIVE STATUS MONITOR (IN THE MIDDLE) ============ -->
+      <div class="server-monitor" data-server-monitor dir="rtl" data-reveal style="--d:.06s">
+        <div class="monitor-top">
+          <div class="monitor-status-wrap">
+            <span class="status-pulse status-offline" data-monitor-pulse>
+              <span class="pulse-ring"></span>
+              <span class="pulse-core"></span>
+            </span>
+            <div class="monitor-status-info">
+              <span class="monitor-eyebrow" data-monitor-eyebrow>SERVER STATUS / غير متصل</span>
+              <strong class="monitor-state-title" data-monitor-state-title>السيرفر مغلق حالياً</strong>
+            </div>
+          </div>
+          <div class="monitor-players-wrap">
+            <span class="monitor-players-label">اللاعبون المتصلون</span>
+            <div class="monitor-players-val">
+              <svg class="players-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <span class="players-num" dir="ltr"><b data-players-count>0</b><small>/</small><span data-players-max>128</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="monitor-progress-wrap">
+          <div class="monitor-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="128" aria-label="سعة السيرفر">
+            <div class="monitor-bar-fill" data-players-bar style="width: 0%"></div>
+          </div>
+          <div class="monitor-progress-labels">
+            <span class="monitor-meta-ip" dir="ltr"><b class="ip-indicator">●</b> <span data-server-ip>joytown.roleplay.gg:30120</span></span>
+            <span class="monitor-meta-pct" data-players-pct>غير متصل</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="access-actions" data-reveal style="--d:.12s">
+        <span class="access-tear-line" aria-hidden="true"></span>
+        <div class="access-buttons">
+          <a class="access-connect" data-server-link href="#" aria-label="الدخول إلى JOY TOWN عبر FiveM">
+            <span class="access-cta-top">JOY TOWN <small>↗</small></span>
+            <span class="access-connect-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64" fill="none"><path d="M15 49 49 15M15 15h34v34" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+            </span>
+            <span class="access-cta-label" dir="rtl">دخول السيرفر<span>ابدأ حكايتك</span></span>
+          </a>
+          <button class="access-copy" type="button" data-copy-ip>
+            <span dir="rtl">نسخ عنوان السيرفر</span>
+            <code dir="ltr" data-server-ip>—</code>
+          </button>
+        </div>
+        <p class="access-status" role="status" aria-live="polite" dir="rtl"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIVE STREAMERS (صناع المحتوى والبثوث المباشرة) ============ -->
+  <section class="streamers-section" id="streamers" aria-labelledby="streamers-title" dir="ltr">
+    <div class="streamers-heading" data-reveal>
+      <div class="streamers-title-wrap">
+        <span class="streamers-eyebrow">CREATOR NETWORK / البث المباشر</span>
+        <h2 id="streamers-title">LIVE ON <em>JOY TOWN.</em></h2>
+        <span class="streamers-subtitle" dir="rtl">تابع مغامرات اللاعبين وبثوث صناع المحتوى مباشرة داخل السيرفر</span>
+      </div>
+      <div class="streamers-live-badge" aria-label="عدد البثوث النشطة">
+        <span class="status-pulse status-offline" data-streamers-pulse>
+          <span class="pulse-ring"></span>
+          <span class="pulse-core"></span>
+        </span>
+        <span class="live-counter-text" dir="rtl"><strong data-live-count>0</strong> بثوث نشطة الآن</span>
+      </div>
+    </div>
+
+    <div class="streamers-grid" data-streamers-grid>
+      <div class="streamers-empty-state" dir="rtl">
+        <div class="streamers-empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 14.14 14.14"/></svg>
+        </div>
+        <h3>لا توجد بثوث مباشرة حالياً</h3>
+        <p>لم يتم تسجيل أو بدء أي بث مباشر في الوقت الحالي — تظهر بثوث صناع المحتوى المعتمدين هنا تلقائياً عند فتحهم البث داخل السيرفر.</p>
+      </div>
+    </div>
+
+    <!-- Streamers Join Banner -->
+    <div class="streamers-banner" data-reveal dir="rtl">
+      <div class="streamers-banner-content">
+        <div class="streamers-banner-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+        </div>
+        <div>
+          <h4>هل تبث رول بلاي في JOY TOWN؟</h4>
+          <p>انضم إلى قائمة صناع المحتوى المعتمدين ليظهر بثك تلقائياً هنا في الموقع عند فتح البث، وتحصل على رتبة الستريمر في الديسكورد.</p>
+        </div>
+      </div>
+      <button type="button" class="streamers-apply-btn" data-streamer-open>
+        <span>طلب رتبة ستريمر</span>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ CITY MAP ============ -->
+  <section class="city-map-section" id="city-map" aria-labelledby="city-map-title" dir="ltr">
+    <div class="city-map-heading" data-reveal>
+      <div class="city-map-title-wrap">
+        <span class="map-eyebrow">JOY TOWN / CITY ATLAS</span>
+        <h2 id="city-map-title">YOUR CITY. <em>YOUR MOVE.</em></h2>
+      </div>
+      <p dir="rtl">مدينة تتّسع لكل الاحتمالات.<br>اقترب، استكشف، واتبع فضولك.</p>
+    </div>
+
+    <div class="map-console">
+      <div class="map-viewport" tabindex="0" role="group" aria-label="خريطة JOY TOWN التفاعلية" aria-describedby="map-help">
+        <div class="map-world">
+          <svg class="map-art" viewBox="0 0 896 1200" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <defs>
+              <filter id="pin-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.85"/>
+              </filter>
+            </defs>
+            <!-- Ocean water background -->
+            <rect width="896" height="1200" fill="#37474e"/>
+            <!-- Real Los Santos Satellite Road Map -->
+            <image href="MAP.jpg" x="0" y="0" width="896" height="1200" preserveAspectRatio="none"/>
+
+            <!-- Fixed Map Dots (فقط نقاط دائرية ثابتة على الخريطة) -->
+            <!-- 0: وسط المدينة (Downtown / Legion Square) -->
+            <g class="map-pin" data-loc="0" tabindex="-1">
+              <circle cx="455" cy="825" r="22" fill="transparent"/>
+              <circle class="pin-dot" cx="455" cy="825" r="8" fill="#eeb71a"/>
+              <text class="pin-tooltip" x="455" y="805">وسط المدينة</text>
+            </g>
+
+            <!-- 1: الميناء الجنوبي (The Port) -->
+            <g class="map-pin" data-loc="1" tabindex="-1">
+              <circle cx="485" cy="1040" r="22" fill="transparent"/>
+              <circle class="pin-dot" cx="485" cy="1040" r="8" fill="#1098ad"/>
+              <text class="pin-tooltip" x="485" y="1020">الميناء الجنوبي</text>
+            </g>
+
+            <!-- 2: المستشفى الشمالي (North Hospital - Morningwood / Del Perro Blvd) -->
+            <g class="map-pin" data-loc="2" tabindex="-1">
+              <circle cx="325" cy="785" r="22" fill="transparent"/>
+              <circle class="pin-dot" cx="325" cy="785" r="8" fill="#e03131"/>
+              <text class="pin-tooltip" x="325" y="765">المستشفى الشمالي</text>
+            </g>
+
+            <!-- 3: مركز شرطة ميشن رو (Police HQ - Mission Row) -->
+            <g class="map-pin is-active" data-loc="3" tabindex="-1">
+              <circle cx="500" cy="828" r="22" fill="transparent"/>
+              <circle class="pin-dot" cx="500" cy="828" r="8" fill="#1971c2"/>
+              <text class="pin-tooltip" x="500" y="808">مركز شرطة ميشن رو</text>
+            </g>
+
+            <!-- 4: الصحراء (Sandy Shores / Desert) -->
+            <g class="map-pin" data-loc="4" tabindex="-1">
+              <circle cx="520" cy="440" r="22" fill="transparent"/>
+              <circle class="pin-dot" cx="520" cy="440" r="8" fill="#f08c00"/>
+              <text class="pin-tooltip" x="520" y="420">الصحراء</text>
+            </g>
+
+            <!-- 5: مطار لوس سانتوس (LSIA Airport) -->
+            <g class="map-pin" data-loc="5" tabindex="-1">
+              <circle cx="300" cy="1010" r="22" fill="transparent"/>
+              <circle class="pin-dot" cx="300" cy="1010" r="8" fill="#748ffc"/>
+              <text class="pin-tooltip" x="300" y="990">مطار لوس سانتوس</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="map-overlay-top" aria-hidden="true"><b>JOY TOWN / TERRAIN</b><span class="map-compass">N ↑</span></div>
+        <div class="map-controls" role="group" aria-label="أدوات الخريطة">
+          <button type="button" data-map-action="out" aria-label="تصغير الخريطة">−</button>
+          <button type="button" data-map-action="in" aria-label="تقريب الخريطة">+</button>
+          <button type="button" data-map-action="reset" aria-label="عرض الخريطة كاملة">⌖</button>
+        </div>
+        <div class="map-overlay-bottom" aria-hidden="true">
+          <span>GRID <strong class="map-grid-value">— / —</strong></span>
+          <span>ZOOM <strong class="map-zoom-value">1.0×</strong></span>
+        </div>
+      </div>
+
+      <aside class="map-sidebar" aria-label="استكشاف الخريطة">
+        <div class="map-sidebar-top"><span>EXPLORE THE UNKNOWN</span><b aria-hidden="true">JT</b></div>
+        <div aria-live="polite" aria-atomic="true">
+          <span class="map-location-label">LAW &amp; ORDER</span>
+          <h3 class="map-location-name">مركز شرطة ميشن رو</h3>
+          <p class="map-location-description">قاعدة الأمن الرئيسية: غرف الاستجابة للبلاغات، انطلاق الدوريات، والعمليات الأمنية الميدانية.</p>
+        </div>
+        <div class="map-instructions" id="map-help">
+          <span>اسحب للاستكشاف <b>DRAG</b></span>
+          <span>الأزرار للتكبير <b>ZOOM</b></span>
+          <span>تقريب بالماوس <b>ALT + SCROLL</b></span>
+        </div>
+        <span class="map-sidebar-foot"><i aria-hidden="true"></i> YOUR NEXT COORDINATES</span>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" dir="ltr" aria-label="JOY TOWN Studio">
+  <div class="footer-top">
+    <a class="footer-brand" href="#home" aria-label="JOY TOWN — العودة للبداية">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="LOGO.png" alt="JOY TOWN" width="44" height="44">
+      </span>
+      <span class="footer-brand-type"><span>JOY TOWN</span><small>STUDIO</small></span>
+    </a>
+    <div class="footer-actions">
+      <a class="footer-discord" data-discord href="#" target="_blank" rel="noopener noreferrer">
+        <span>Discord</span>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52l-.6 1.23a18.3 18.3 0 0 0-5.66 0l-.6-1.23a19.8 19.8 0 0 0-4.89 1.52C.59 8.91-.25 13.34.17 17.7a19.7 19.7 0 0 0 6 3.03l1.27-2.07a12.7 12.7 0 0 1-1.98-.95l.49-.38a14.1 14.1 0 0 0 12.1 0l.49.38c-.63.37-1.3.69-1.98.95l1.27 2.07a19.7 19.7 0 0 0 6-3.03c.49-5.06-.84-9.45-3.51-13.33ZM8.02 15.05c-1.17 0-2.13-1.08-2.13-2.4s.94-2.4 2.13-2.4c1.2 0 2.15 1.09 2.13 2.4 0 1.32-.94 2.4-2.13 2.4Zm7.96 0c-1.17 0-2.13-1.08-2.13-2.4s.94-2.4 2.13-2.4c1.2 0 2.15 1.09 2.13 2.4 0 1.32-.93 2.4-2.13 2.4Z"/></svg>
+      </a>
+      <a class="footer-store" data-store href="#" target="_blank" rel="noopener noreferrer">
+        <span>المتجر</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 8V6a4 4 0 0 1 8 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-wordmark" aria-hidden="true">
+    <span class="wm-letter">J</span><span class="wm-letter">O</span><span class="wm-letter">Y</span><span class="wm-gap"></span><span class="wm-letter">T</span><span class="wm-letter">O</span><span class="wm-letter">W</span><span class="wm-letter">N</span>
+  </div>
+
+  <div class="footer-company" dir="ltr" role="group" aria-label="Company information">
+    <div class="footer-company-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/></svg>
+      <div><span class="footer-company-label">Serving Players</span><span class="footer-company-value">Worldwide</span></div>
+    </div>
+    <div class="footer-company-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+      <div><span class="footer-company-label">Contact</span><span class="footer-company-value">support@joytown.gg</span></div>
+    </div>
+    <div class="footer-company-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg>
+      <div><span class="footer-company-label">Platform</span><span class="footer-company-value">FiveM Roleplay</span></div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© <span id="year">2026</span> JOY TOWN STUDIO</span>
+    <a href="#home" class="footer-back-top" aria-label="العودة إلى أعلى الصفحة"><span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+
+<!-- ============ STORY DIALOG ============ -->
+<dialog class="story-dialog" aria-labelledby="story-detail-title" aria-describedby="story-detail-description">
+  <div class="story-turner">
+    <article class="story-panel" dir="rtl">
+      <button class="story-close" type="button" aria-label="إغلاق البطاقة">×</button>
+      <div class="story-detail-top">
+        <span class="story-detail-edition" dir="ltr">JOY TOWN / ROLE EDITION</span>
+        <span class="story-detail-eyebrow" dir="ltr"></span>
+      </div>
+      <div class="story-detail-copy">
+        <h2 id="story-detail-title" dir="ltr"></h2>
+        <p id="story-detail-description"></p>
+
+        <ol class="story-paths" data-story-paths></ol>
+
+        <button type="button" class="story-cta" data-story-cta>قدّم اختبارك الآن <b aria-hidden="true">↗</b></button>
+
+        <span class="story-detail-footer" dir="ltr"><span>JOY TOWN</span><b aria-hidden="true">JT</b></span>
+      </div>
+    </article>
+    <div class="story-back" aria-hidden="true">
+      <span class="story-back-top">JOY TOWN<br><small>THE CITY REMEMBERS</small></span>
+      <div class="story-back-crest">JT</div>
+      <span class="story-back-bottom">ONE CITY. ENDLESS STORIES.<br><small>CHOOSE YOUR STORY</small></span>
+    </div>
+  </div>
+</dialog>
+
+<!-- ============ STREAMER APPLICATION DIALOG ============ -->
+<dialog class="streamer-dialog" id="streamer-dialog" aria-labelledby="streamer-dialog-title" dir="rtl">
+  <div class="streamer-panel">
+    <button class="streamer-close" type="button" aria-label="إغلاق النافذة" data-streamer-close>×</button>
+    
+    <div class="streamer-dialog-head">
+      <div class="streamer-head-tag">
+        <span class="streamer-pulse-dot"></span>
+        <span>JOY TOWN • نظام صناع المحتوى</span>
+      </div>
+      <h2 id="streamer-dialog-title">طلب رتبة صانع محتوى / ستريمر</h2>
+      <p>راجع ضوابط وشروط البث، وتأكد من بيانات حسابك في ديسكورد، وأرسل رابط قناتك لاعتماد رتبتك تلقائياً.</p>
+    </div>
+
+    <div class="streamer-content-body" data-streamer-content>
+      <!-- 01: Discord Account Verification -->
+      <div class="streamer-box">
+        <div class="streamer-box-title">
+          <span class="streamer-step-num">01</span>
+          <h4>حساب Discord المرتبط</h4>
+        </div>
+
+        <!-- في حال كان مسجلاً بالديسكورد مسبقاً -->
+        <div class="streamer-discord-connected" data-streamer-discord-user hidden>
+          <img class="streamer-avatar" data-streamer-avatar src="LOGO.png" alt="Avatar">
+          <div class="streamer-discord-meta">
+            <div class="streamer-verified-badge">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>حساب ديسكورد موثّق</span>
+            </div>
+            <strong data-streamer-name>الاسم</strong>
+            <small dir="ltr" data-streamer-tag>@username (ID: 000000)</small>
+          </div>
+        </div>
+
+        <!-- في حال لم يكن مسجلاً بعد -->
+        <div class="streamer-discord-guest" data-streamer-discord-guest>
+          <p>سجل دخولك المباشر بديسكورد لجلب بياناتك وصورتك تلقائياً، أو اكتب حسابك يدوياً:</p>
+          <div class="streamer-guest-actions">
+            <button type="button" class="btn-discord-login" data-action-discord-login>
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52l-.6 1.23a18.3 18.3 0 0 0-5.66 0l-.6-1.23a19.8 19.8 0 0 0-4.89 1.52C.59 8.91-.25 13.34.17 17.7a19.7 19.7 0 0 0 6 3.03l1.27-2.07a12.7 12.7 0 0 1-1.98-.95l.49-.38a14.1 14.1 0 0 0 12.1 0l.49.38c-.63.37-1.3.69-1.98.95l1.27 2.07a19.7 19.7 0 0 0 6-3.03c.49-5.06-.84-9.45-3.51-13.33ZM8.02 15.05c-1.17 0-2.13-1.08-2.13-2.4s.94-2.4 2.13-2.4c1.2 0 2.15 1.09 2.13 2.4 0 1.32-.94 2.4-2.13 2.4Zm7.96 0c-1.17 0-2.13-1.08-2.13-2.4s.94-2.4 2.13-2.4c1.2 0 2.15 1.09 2.13 2.4 0 1.32-.93 2.4-2.13 2.4Z"/></svg>
+              <span>تسجيل الدخول السريع بحساب Discord</span>
+            </button>
+            <div class="streamer-manual-discord">
+              <span>أو اكتب يدوياً (إذا لم تسجل بحساب ديسكورد):</span>
+              <div class="streamer-manual-inputs">
+                <input type="text" name="manualDiscordTag" placeholder="يوزر حسابك بالديسكورد (مثال: streamer_jp)">
+                <input type="text" name="manualDiscordId" placeholder="آيدي الديسكورد إن وجد (Discord ID)">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02: Streamer Rules -->
+      <div class="streamer-box">
+        <div class="streamer-box-title">
+          <span class="streamer-step-num">02</span>
+          <h4>شروط وضوابط البث المباشر</h4>
+        </div>
+        <div class="streamer-rules-list">
+          <div class="streamer-rule-item">
+            <span class="rule-bullet">1</span>
+            <div>
+              <strong>احترام قوانين الرول بلاي والواقعية:</strong>
+              <p>الالتزام الصارم بقوانين تقمص الشخصية وتقدير الخوف (Fear RP) ومنع كسر الواقعية (Fail RP) بجميع أشكالها أمام المشاهدين.</p>
+            </div>
+          </div>
+          <div class="streamer-rule-item">
+            <span class="rule-bullet">2</span>
+            <div>
+              <strong>منع الميتا وسرقة المعلومات (No Metagaming / Stream Sniping):</strong>
+              <p>يمنع منعاً باتاً استغلال محادثات البث (Chat) لأخذ معلومات تفيدك داخل السيناريو، أو التعاون مع المتابعين لكشف مواقع الآخرين.</p>
+            </div>
+          </div>
+          <div class="streamer-rule-item">
+            <span class="rule-bullet">3</span>
+            <div>
+              <strong>عنوان البث وهوية السيرفر:</strong>
+              <p>يجب وضع اسم السيرفر [ JOY TOWN ] بوضوح في عنوان البث على المنصة عند اللعب داخل المدينة.</p>
+            </div>
+          </div>
+          <div class="streamer-rule-item">
+            <span class="rule-bullet">4</span>
+            <div>
+              <strong>النشاط والأخلاق العامة:</strong>
+              <p>المحافظة على بث لائق ومحترم يمثل مجتمع السيرفر بصورة إيجابية، والتواصل مع الإدارة لأي فعاليات خاصة.</p>
+            </div>
+          </div>
+        </div>
+        <label class="streamer-rule-agree">
+          <input type="checkbox" name="streamerAgree" required checked>
+          <span>أتعهد بالالتزام التام بكافة شروط وضوابط البث المباشر في سيرفر JOY TOWN.</span>
+        </label>
+      </div>
+
+      <!-- 03: Application Details Form -->
+      <form class="streamer-form" novalidate>
+        <div class="streamer-box">
+          <div class="streamer-box-title">
+            <span class="streamer-step-num">03</span>
+            <h4>معلومات القناة والتقديم</h4>
+          </div>
+
+          <div class="streamer-form-grid">
+            <label class="field">
+              <span>منصة البث الرئيسية</span>
+              <select name="streamPlatform" required>
+                <option value="Kick">منصة Kick</option>
+                <option value="Twitch">منصة Twitch</option>
+                <option value="YouTube">منصة YouTube</option>
+                <option value="TikTok">منصة TikTok</option>
+                <option value="أخرى">منصة أخرى</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>رابط القناة أو البث</span>
+              <input type="url" name="channelUrl" placeholder="https://kick.com/yourchannel" required>
+            </label>
+
+            <label class="field">
+              <span>اسم القناة / اسمك كستريمر</span>
+              <input type="text" name="channelName" placeholder="مثال: Sultan_Live" required>
+            </label>
+
+            <label class="field">
+              <span>اسم شخصيتك في السيرفر</span>
+              <input type="text" name="streamCharName" placeholder="مثال: سلطان الدوسري" required>
+            </label>
+
+            <label class="field">
+              <span>متوسط المشاهدين أو المتابعين</span>
+              <input type="text" name="viewersCount" placeholder="مثال: 50 - 100 مشاهد أو 5K متابع" required>
+            </label>
+
+            <label class="field">
+              <span>المدينة / الدولة</span>
+              <input type="text" name="streamerCountry" placeholder="مثال: السعودية" required>
+            </label>
+
+            <label class="field field-full">
+              <span>نبذة عن أسلوبك في البث ومحتواك (اختياري)</span>
+              <textarea name="streamerBio" rows="2" placeholder="ما نوع السيناريوهات المفضلة لديك (عسكري، عصابات، مدني...)؟"></textarea>
+            </label>
+          </div>
+
+          <p class="streamer-form-error" data-streamer-error hidden role="alert"></p>
+
+          <div class="streamer-form-actions">
+            <button type="submit" class="btn-streamer-submit" data-streamer-submit-btn>
+              <span data-streamer-submit-label>إرسال طلب رتبة ستريمر واعتمادها</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Success message screen -->
+    <div class="streamer-success" data-streamer-success hidden>
+      <div class="streamer-success-mark">
+        <svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>تم استلام طلب رتبة الستريمر بنجاح!</h3>
+      <p>تم إرسال بيانات قناتك وحسابك إلى إدارة سيرفر <b>JOY TOWN</b> في الديسكورد برتبة <b class="gold-text">[ ستريمر معتمد ]</b> للمراجعة والتفعيل الفوري.</p>
+      <button type="button" class="btn-streamer-done" data-streamer-close>إغلاق النافذة</button>
+    </div>
+
+  </div>
+</dialog>
+
+
+
+
+<div class="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="app.js" defer></script>
+</body>
+</html>
